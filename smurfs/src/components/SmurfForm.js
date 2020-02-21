@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // // ? import 'getData' here?
-import { getData } from '../actions'
+import { getData, postData } from '../actions'
 //? import postData here?
 
 const SmurfForm = props => {
@@ -14,10 +14,9 @@ const SmurfForm = props => {
     //? const handlePostData? handleSubmit?
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('handleSubmit')
+        props.postData();
+        console.log('handleSubmit', props)
     }
-    //todo inputs name: '', age: #, height: ''
-    // ? input 'value'?
     return (
         <>
             <button
@@ -25,9 +24,23 @@ const SmurfForm = props => {
                 onClick={handleGetData}
             >Show me Smurfs</button>
             <div className='create-smurf-container'>
-                <input className='name-input' type='text' name='name' value={props.name} placeholder='Smurf Name' />
-                <input className='age-input' type='number' name='age' value={props.age} placeholder='Age' />
-                <input className='height-input' type='text' name='height' value={props.height} placeholder='Height (cm)' />
+                <input
+                    className='name-input'
+                    type='text' name='name'
+                    value={props.name}
+                    placeholder='Smurf Name' />
+                <input
+                    className='age-input'
+                    type='number'
+                    name='age'
+                    value={props.age}
+                    placeholder='Age' />
+                <input
+                    className='height-input'
+                    type='text'
+                    name='height'
+                    value={props.height}
+                    placeholder='Height (cm)' />
                 <button
                     className='submit-smurf-btn'
                     onClick={handleSubmit}
@@ -39,8 +52,9 @@ const SmurfForm = props => {
 
 const mapStateToProps = state => {
     return {
+        smurfList: state.smurfList,
         isFetchingData: state.isFetchingData
     }
 }
 
-export default connect(mapStateToProps, { getData })(SmurfForm);
+export default connect(mapStateToProps, { getData, postData })(SmurfForm);
