@@ -5,6 +5,8 @@ import "./App.css";
 import SmurfForm from './SmurfForm';
 import SmurfList from './SmurfList';
 
+export const SmurfContext = createContext();
+
 function App() {
   return (
     <div className="App">
