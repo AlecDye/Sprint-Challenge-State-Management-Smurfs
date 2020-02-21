@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const UPDATE_SMURF = 'UPDATE_SMURF'
+export const POST_DATA = 'POST_DATA';
 
 export const getData = () => dispatch => {
     dispatch({ type: FETCH_DATA });
@@ -16,8 +17,15 @@ export const getData = () => dispatch => {
         })
 }
 
-//? sendData needs a payload from SmurfForm?
-// export const sendData = () => dispatch => {
-//     dispatch({ type: SEND_DATA });
-//     axios
-// }
+//? postData needs a payload from SmurfForm?
+export const postData = () => dispatch => {
+    dispatch({ type: POST_DATA });
+    axios
+        .post('http://localhost:3333/smurfs')
+        .then(res => {
+            console.log('Post request successful', res);
+        })
+        .catch(err => {
+            console.log('Post request failed', err);
+        })
+}

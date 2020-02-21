@@ -8,10 +8,12 @@ const SmurfList = props => {
     return (
         <>
             <h2>Smurf Census 2020</h2>
-            {props.smurfList.map((smurf, index) => (
-                <Smurf key={index} smurf={smurf} />
+            <div className='smurf-card-container'>
+                {props.smurfList.map((smurf, index) => (
+                    <Smurf key={index} smurf={smurf} />
 
-            ))}
+                ))}
+            </div>
         </>
     )
 }
