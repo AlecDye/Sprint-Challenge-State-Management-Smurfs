@@ -16,7 +16,7 @@ export const smurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 smurfList: action.payload,
-                isFetchingData: false
+                isFetchingData: true
             }
         default:
             return state;
