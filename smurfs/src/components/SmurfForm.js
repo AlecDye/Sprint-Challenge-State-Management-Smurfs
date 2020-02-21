@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-//? import 'getData' here?
+// // ? import 'getData' here?
 import { getData } from '../actions'
 
 const SmurfForm = props => {
+    console.log('SmurfForm', props)
     const handleGetData = event => {
         event.preventDefault();
         props.getData();
@@ -12,7 +13,8 @@ const SmurfForm = props => {
     return (
         <>
             <button
-                onClick={handleGetData} >Smurf it Up</button>
+                onClick={handleGetData} >Show me Smurfs</button>
+            <button>Make a Smurf</button>
         </>
     )
 }

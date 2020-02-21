@@ -1,28 +1,26 @@
 import React from "react";
 import "./App.css";
 
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-
-import { smurfReducer as reducer } from '../reducers';
+import { connect } from 'react-redux';
 
 // Components
 import SmurfForm from './SmurfForm';
 import SmurfList from './SmurfList';
 
-const store = createStore(reducer, applyMiddleware(thunk));
-
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <h1>Smurfing Around</h1>
-        <SmurfForm />
-        <SmurfList />
-      </div>
-    </Provider>
+    <div className="App">
+      <h1>Smurfing Around</h1>
+      <SmurfForm />
+      <SmurfList />
+    </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    smurfList: state.smurfList
+  }
+}
+
+export default connect(mapStateToProps, {})(App);

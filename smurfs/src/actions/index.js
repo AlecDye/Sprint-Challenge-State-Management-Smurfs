@@ -13,3 +13,9 @@ export const getData = () => dispatch => {
             console.error('Fetch error from API', err);
         })
 }
+
+//? sendData needs a payload from SmurfForm?
+// export const sendData = () => dispatch => {
+//     dispatch({ type: SEND_DATA });
+//     axios
+// }
