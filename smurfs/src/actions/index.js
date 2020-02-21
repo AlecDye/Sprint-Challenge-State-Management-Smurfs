@@ -18,7 +18,7 @@ export const getData = () => dispatch => {
 }
 
 //? postData needs a payload from SmurfForm?
-export const postData = (value) => dispatch => {
+export const postData = value => dispatch => {
     dispatch({ type: POST_DATA, payload: value });
     axios
         .post('http://localhost:3333/smurfs', value)

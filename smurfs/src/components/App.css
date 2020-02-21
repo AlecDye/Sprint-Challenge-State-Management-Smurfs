@@ -9,6 +9,8 @@
   max-width: 20%;
   margin: 0 auto;
   padding: 2rem;
+  border-top: 2px dashed grey;
+  padding-top: 1.5rem;
 }
 
 input {
@@ -26,6 +28,11 @@ button {
   color: white;
   font-size: 16px;
   border: none;
+  border-radius: 5px;
+}
+
+.display-smurfs-btn {
+  margin-bottom: 1.5rem;
 }
 
 .submit-smurf-btn {
