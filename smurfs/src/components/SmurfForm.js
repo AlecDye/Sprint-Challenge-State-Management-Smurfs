@@ -14,7 +14,12 @@ const SmurfForm = props => {
         <>
             <button
                 onClick={handleGetData} >Show me Smurfs</button>
-            <button>Make a Smurf</button>
+            <div>
+                <input />
+                <input />
+                <input />
+                <button>Make a Smurf</button>
+            </div>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { FETCH_DATA } from "../actions";
+import { FETCH_DATA, UPDATE_SMURF } from "../actions";
 
 const initialState = {
     smurfList: [],
@@ -11,6 +11,12 @@ export const smurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetchingData: true
+            }
+        case UPDATE_SMURF:
+            return {
+                ...state,
+                smurfList: action.payload,
+                isFetchingData: false
             }
         default:
             return state;

@@ -19,7 +19,7 @@ const SmurfList = props => {
 //? function mapStateToProps
 const mapStateToProps = state => {
     return {
-        smurfList: [state.smurfList]
+        smurfList: state.smurfList
     }
 }
 
