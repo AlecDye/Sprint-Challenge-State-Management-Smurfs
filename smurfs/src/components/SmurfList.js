@@ -17,5 +17,10 @@ const SmurfList = props => {
 }
 
 //? function mapStateToProps
+const mapStateToProps = state => {
+    return {
+        smurfList: [state.smurfList]
+    }
+}
 
-export default SmurfList;
+export default connect(mapStateToProps, {})(SmurfList);

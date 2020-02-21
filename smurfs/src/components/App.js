@@ -17,10 +17,10 @@ function App() {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    smurfList: state.smurfList
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     smurfList: state.smurfList
+//   }
+// }
 
-export default connect(mapStateToProps, {})(App);
+export default App;
